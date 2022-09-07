@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client'
 import { CreatePageParameters } from '@notionhq/client/build/src/api-endpoints'
 import ogp from 'ogp-parser'
+import moment from 'moment'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type TODO = any
@@ -36,13 +37,8 @@ export const addFeedItems = async (
         },
       },
       'Created At': {
-        rich_text: [
-          {
-            text: {
-              content: pubDate,
-            },
-          },
-        ],
+        type: 'date',
+        date: moment(pubDate).toISOString()
       },
     }
 
