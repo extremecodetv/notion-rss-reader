@@ -46,12 +46,11 @@ export const addFeedItems = async (
     const ogpImage = link
       ? await ogp(link).then((data) => {
           const imageList = data.ogp['og:image']
-          return imageList ? imageList[0] : null
+          return imageList ? imageList[0] : ''
         })
       : ''
 
-    const children: CreatePageParameters['children'] = enclosure
-      ? [
+    const children: CreatePageParameters['children'] = enclosure ? [
           {
             type: 'image',
             image: {

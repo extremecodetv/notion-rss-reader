@@ -113585,7 +113585,7 @@ var addFeedItems = async (newFeedItems) => {
     };
     const ogpImage = link ? await (0, import_ogp_parser.default)(link).then((data) => {
       const imageList = data.ogp["og:image"];
-      return imageList ? imageList[0] : null;
+      return imageList ? imageList[0] : "";
     }) : "";
     const children2 = enclosure ? [
       {
