@@ -17,7 +17,7 @@ export const addFeedItems = async (
   newFeedItems.forEach(async (item) => {
     const { title, link, enclosure, pubDate } = item
     const domain = link?.match(/^https?:\/{2,}(.*?)(?:\/|\?|#|$)/)
-    console.log('Date ' + moment(pubDate).toISOString())
+    
     const properties: TODO = {
       Title: {
         title: [
@@ -42,6 +42,9 @@ export const addFeedItems = async (
         },
       },
     }
+
+    console.error('date iso: ')
+    console.error(moment(pubDate).toISOString())
 
     const ogpImage = link
       ? await ogp(link).then((data) => {
