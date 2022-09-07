@@ -20,5 +20,5 @@ jobs:
 
       - name: Update Notion Feed
         run: |
-          curl -o bundle.cjs https://raw.githubusercontent.com/watsuyo/notion-rss-reader/bundle/dist/bundle.cjs
+          curl -o bundle.cjs https://raw.githubusercontent.com/extremecodetv/notion-rss-reader/master/dist/bundle.cjs
           node bundle.cjs

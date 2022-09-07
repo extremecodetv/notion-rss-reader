@@ -113583,8 +113583,6 @@ var addFeedItems = async (newFeedItems) => {
         }
       }
     };
-    console.error("date iso: ");
-    console.error((0, import_moment.default)(pubDate).toISOString());
     const ogpImage = link ? await (0, import_ogp_parser.default)(link).then((data) => {
       const imageList = data.ogp["og:image"];
       return imageList ? imageList[0] : null;
