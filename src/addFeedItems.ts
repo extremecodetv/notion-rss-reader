@@ -43,9 +43,6 @@ export const addFeedItems = async (
       },
     }
 
-    console.error('date iso: ')
-    console.error(moment(pubDate).toISOString())
-
     const ogpImage = link
       ? await ogp(link).then((data) => {
           const imageList = data.ogp['og:image']
