@@ -37,8 +37,9 @@ export const addFeedItems = async (
         },
       },
       'Created At': {
-        type: 'date',
-        date: moment(pubDate).toISOString()
+        "date": {
+          "start": moment(pubDate).toISOString()
+        },
       },
     }
 
